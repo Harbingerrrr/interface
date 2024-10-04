@@ -1,8 +1,9 @@
 <p align="center">
     <img width="250" height="250" src="./client/src/assets/logo.jpg" alt="Logo"/>
 </p>
+<center><h1>Harbinger</h1></center>
 
-# Harbinger
+# Information
 Harbinger is an open-source project designed for ROBLOX group owners to manage experience points, user data, and other important metrics efficiently and at a reduced cost. Inspired by Clan Labs, Harbinger goes beyond by providing faster performance, additional customization options, and extended functionality.
 
 ## Key Features
