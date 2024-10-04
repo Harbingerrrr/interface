@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="./client/src/assets/logo.jpg" alt="Logo"/>
+    <img width="250" height="250" src="./client/src/assets/logo.jpg" alt="Logo"/>
 </p>
 
 # Harbinger
