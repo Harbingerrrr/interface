@@ -9,9 +9,9 @@ import { RouterModule } from '@angular/router';
 })
 export class AppComponent implements OnInit  {
     constructor(public router: Router,  ) { }
-    loggedIn: boolean = true
+    loggedIn: boolean = false
     ngOnInit(): void {
-        // console.log(this.loggedIn)
+        if (localStorage.getItem("access_token") !== null) this.loggedIn = true
     }
 
 }

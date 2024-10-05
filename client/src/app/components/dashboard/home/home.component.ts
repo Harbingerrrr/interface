@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { DashboardService } from '../../../services/dashboard.service'
 
 @Component({
   selector: 'app-home',
@@ -8,10 +7,8 @@ import { DashboardService } from '../../../services/dashboard.service'
 })
 export class HomeComponent {
 
-  constructor(private test: DashboardService) {}
+  constructor() {}
 
-  testBtn() {
-    this.test.test()
-  }
+
 
 }

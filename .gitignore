@@ -1,6 +1,7 @@
 .vscode
 .angular
 *node_modules
+client/dist/*
 
 # Compiled output
 /dist

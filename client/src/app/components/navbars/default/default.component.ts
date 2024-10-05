@@ -9,10 +9,10 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class DefaultComponent {
   constructor(public router: Router) { }
+  ngOnInit(): void {}
 
-  
-  ngOnInit(): void {
-    
+  async auth() {
+    window.location.href = "http://localhost:3000/api/auth/login"
   }
 
 }

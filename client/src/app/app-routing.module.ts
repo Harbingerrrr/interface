@@ -4,6 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 // home page (not authenticated)
 import { HomeComponent } from './components/home/home.component';
 
+// authenticating user
+import { AuthComponent } from './components/auth/auth.component';
+
 // authenticated routes
 import { HomeComponent as DashboardComponent } from './components/dashboard/home/home.component'
 
@@ -14,10 +17,16 @@ export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
 
+    { path: 'auth', component: AuthComponent },
+
     { path: 'dashboard', component: DashboardComponent },
     
     { path: 'dashboard/groups', component: GroupsComponent },
 
+
+
+    // catch-all route
+    { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ];
 
 @NgModule({
