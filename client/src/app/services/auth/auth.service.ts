@@ -1,6 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { verifyHostBindings } from '@angular/compiler';
 import { Injectable } from '@angular/core';
+import { environment } from '../../../environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,18 +14,14 @@ export class AuthService {
   async verify() {
     const accessToken = localStorage.getItem("access_token")
     
-    if (!accessToken) {
-      throw new Error("No access token found")
-    }
+    if (!accessToken) window.location.href = "/"
 
     const headers = new HttpHeaders({
       Authorization: `Bearer ${accessToken}`
     })
 
+    let userData = await this.http.post(`${environment.api}/auth/verify`, {}, {headers}).toPromise()
 
-    let temp = await this.http.get(`http://localhost:3000/api/auth/test`)
-
-    console.log(temp)
-
+    return userData === null ? window.location.href = "/" : userData
   }
 }

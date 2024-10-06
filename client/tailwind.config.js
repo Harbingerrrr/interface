@@ -8,12 +8,12 @@ module.exports = {
     themes: [
       {
         myTheme: {
-          "primary": "#5d5de9",
-          "secondary": "#ed2dfb",
-          "accent": "#48ea99",
-          "neutral": "#142438",
-          "base-100": "#080e16",
-          "base-200": "#0D1520",
+          "primary": "#45d78e",
+          "secondary": "#3c70e1",
+          "accent": "#eeba6c",
+          "neutral": "#333341",
+          "base-100": "#eeeff1",
+          "base-200": "#ff0026",
         },
       },
     ],

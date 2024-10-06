@@ -28,17 +28,14 @@ export class SupabaseService {
         return data.url
     }
 
-    async userSession(code: string) {
-        const { data, error } = await this.supabase.auth.exchangeCodeForSession(code)
-        if (error) throw error
-        return data.session
-    }
-
     // TODO: use to verify token 
     async verifyToken(token: string) {
         const { data: {user}} = await this.supabase.auth.getUser(token)
+        return user
+    }
 
-        console.log(user)
-        return true
+    async getUser(token: string) {
+        const { data: { user } } = await this.supabase.auth.getUser(token)
+        return user === null ? null : user
     }
 }

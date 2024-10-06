@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
+
 
 @Component({
   selector: 'app-auth',
@@ -9,7 +12,7 @@ import { AuthService } from '../../services/auth/auth.service';
 })
 export class AuthComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private router: Router, private auth: AuthService) {}
+  constructor(private route: ActivatedRoute, private router: Router, private auth: AuthService, private http: HttpClient) { }
 
   ngOnInit() {
     this.route.fragment.subscribe(async (fragment: string | null) => {
@@ -30,9 +33,21 @@ export class AuthComponent implements OnInit {
         // @ts-ignore
         localStorage.setItem("token_type", tokenType)
 
-        window.location.href="/dashboard"
+        let response = await this.auth.verify()
+
+        const headers = new HttpHeaders({
+          Authorization: `Bearer ${accessToken}`,
+          // @ts-ignore
+          Discord: response.identities[0].id
+        })
+
+        await this.http.post(`${environment.api}/subscribers/create`, {}, { headers }).toPromise()
+        window.location.href = "/dashboard"
       }
     })
+
+    let accessToken = localStorage.getItem("access_token")
+    if (!accessToken) window.location.href = "/"
   }
 
 }

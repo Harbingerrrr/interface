@@ -1,10 +1,13 @@
 import { Controller, Get, Post, Query, Res, Headers, UnauthorizedException} from '@nestjs/common';
 import { SupabaseService } from 'src/util/supabase/supabase.service';
 import { Response } from 'express'
+import { ElasticsearchService } from '@nestjs/elasticsearch';
+import { AuthService } from './auth.service';
+
 
 @Controller('auth')
 export class AuthController {
-    constructor(private readonly supabase: SupabaseService) {}
+    constructor(private readonly supabase: SupabaseService, private elastic: ElasticsearchService, private authService: AuthService) {}
 
     @Get('login')
     async auth(@Res() res: Response) {
@@ -13,11 +16,17 @@ export class AuthController {
     }
 
     @Post('verify')
-    async verify(@Res() res: Response, @Headers('authorization') auth: string) {
-        console.log("gets here")
+    async verify(@Headers('Authorization') auth: string) {
         const accessToken = auth.split(' ')[1]
-        if (!accessToken) return false
+        if (!accessToken) return null
         return this.supabase.verifyToken(accessToken)
+    }
+
+    @Get('user')
+    async getUser(@Headers('Authorization') auth: string) {
+        const accessToken = auth.split(' ')[1]
+        if (!accessToken) return null
+        return this.supabase.getUser(accessToken)
     }
 
 }
