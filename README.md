@@ -1,8 +1,15 @@
+
+
 <p align="center">
     <img width="250" height="250" src="./client/src/assets/logo.jpg" alt="Logo"/>
 </p>
 <h1 align="center">Harbinger</h1>
 Harbinger is an open-source project designed for ROBLOX group owners to manage experience points, user data, and other important metrics efficiently and at a reduced cost. Inspired by Clan Labs, Harbinger goes beyond by providing faster performance, additional customization options, and extended functionality.
+<br>
+<br>
+First 500 users in the server get a year of free access!
+
+[![](https://dcbadge.limes.pink/api/server/https://discord.gg/xp6dFhnqXe)](https://discord.gg/xp6dFhnqXe)
 
 ## Key Features
 - **Public API**: Allowing developers and group owners to interact with group data programmatically.
