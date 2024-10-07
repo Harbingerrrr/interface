@@ -9,7 +9,7 @@ import { AuthComponent } from './components/auth/auth.component';
 
 // authenticated routes
 import { HomeComponent as DashboardComponent } from './components/dashboard/home/home.component'
-
+import { RblxComponent } from './components/dashboard/rblx/rblx.component'
 import { HomeComponent as GroupsComponent } from './components/dashboard/groups/home/groups.component'
 
 
@@ -20,7 +20,7 @@ export const routes: Routes = [
     { path: 'auth', component: AuthComponent },
 
     { path: 'dashboard', component: DashboardComponent },
-    
+    { path: 'dashboard/rblx', component: RblxComponent },
     { path: 'dashboard/groups', component: GroupsComponent },
 
 

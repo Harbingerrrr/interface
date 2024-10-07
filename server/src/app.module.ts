@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { ConfigModule } from '@nestjs/config';
 import { ElasticsearchModule } from '@nestjs/elasticsearch';
+import { HttpModule } from '@nestjs/axios';
 import { join } from 'path';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -21,6 +22,7 @@ import { SubscribersService } from './api/subscribers/subscribers.service';
 
 @Module({
   imports: [
+    HttpModule,
     ElasticsearchModule.register({
       node: 'http://localhost:9200',
       auth: {

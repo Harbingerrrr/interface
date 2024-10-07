@@ -1,4 +1,4 @@
-<div class="grid grid-cols-4 grid-rows-3 gap-5 p-6">
+<div class="grid grid-cols-4 grid-rows-3 gap-10 p-6">
     <div class="card w-full h-full bg-[#ffffff] text-primary-content flex-grow">
         <div class="card-body">
             <h2 class="card-title text-2xl"><i class="fa-duotone fa-bell-on"></i>System Message</h2>
@@ -7,7 +7,7 @@
             </p>
         </div>
     </div>
-    <div class="card w-full h-full bg-[#ffffff] text-primary-content flex-grow">
+    <div class="card cursor-pointer w-full h-full bg-[#ffffff] text-primary-content flex-grow duration-100 hover:scale-105">
         <div class="card-body">
             <h2 class="card-title text-2xl"><i class="fa-duotone fa-user"></i>Subscription</h2>
             <p class="text-lg">
@@ -15,22 +15,25 @@
             </p>
         </div>
     </div>
-    <div class="card w-full h-full bg-[#5865F2] text-primary-content flex-grow">
+    <div class="card w-full h-full image-full bg-[#5865F2] text-primary-content flex-grow">
+        <figure>
+            <img src="{{discordProfile}}" alt="Discord" />
+        </figure>
         <div class="card-body">
             <h2 class="card-title text-2xl text-[#ffffff]"><i class="fa-brands fa-discord"></i>Discord Verification</h2>
             <p class="text-lg text-[#ffffff]">
                 Harbinger retrieved your Discord information!
             </p>
         </div>
-        <figure>
-            <img src="{{discordProfile}}" alt="Discord" />
-        </figure>
     </div>
-    <div class="card w-full h-full bg-[#ffffff] text-primary-content flex-grow">
+    <div (click)="rblxVerification()" class="card cursor-pointer w-full h-full image-full bg-[#000000] text-primary-content flex-grow duration-100 hover:scale-105">
+        <figure class="flex justify-center">
+            <img src="https://img.icons8.com/ios11/200/FFFFFF/roblox.png" alt="ROBLOX"  />
+        </figure>
         <div class="card-body">
-            <h2 class="card-title text-3xl"><i class="fa-duotone fa-solid fa-user-secret"></i>ROBLOX Verification</h2>
+            <h2 class="card-title text-3xl text-[#ffffff]"><i class="fa-duotone fa-solid fa-user-secret"></i>ROBLOX Verification</h2>
             <p class="text-lg">
-                Is user verified
+                Click here to manage your linked ROBLOX accounts
             </p>
         </div>
     </div>
@@ -44,7 +47,7 @@
         </div>
     </div>
     <div class="col-start-3 row-start-2">
-        <div class="card w-full h-full bg-[#ffffff] text-primary-content flex-grow">
+        <div class="card cursor-pointer w-full h-full bg-[#ffffff] text-primary-content flex-grow duration-100 hover:scale-105">
             <div class="card-body">
                 <h2 class="card-title text-2xl"><i class="fa-duotone fa-layer-group"></i>Groups</h2>
                 <p>If a dog chews shoes whose shoes does he choose?</p>
@@ -52,7 +55,7 @@
         </div>
     </div>
     <div class="col-start-4 row-start-2">
-        <div class="card w-full h-full bg-[#ffffff] text-primary-content flex-grow">
+        <div class="card cursor-pointer w-full h-full bg-[#ffffff] text-primary-content flex-grow duration-100 hover:scale-105">
             <div class="card-body">
                 <h2 class="card-title text-2xl"><i class="fa-duotone fa-users"></i>Users</h2>
                 <p>If a dog chews shoes whose shoes does he choose?</p>

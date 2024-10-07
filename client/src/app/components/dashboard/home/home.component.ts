@@ -56,5 +56,8 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  rblxVerification() {
+    window.location.href = "dashboard/rblx"
+  }
 
 }
